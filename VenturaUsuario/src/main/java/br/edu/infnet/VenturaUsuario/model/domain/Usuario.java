@@ -15,6 +15,8 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String cpf;
+	private String cep;
+	private String endereco;
 	private String razaoSocial;
 	private String cnpj;
 	private char tipo;
@@ -25,7 +27,19 @@ public class Usuario {
 	public Usuario() {
 		
 	}
-	
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
 	public String getCpf() {
 		return cpf;
 	}
@@ -74,6 +88,13 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-
+	public static char getAdministrador() {
+		return ADMINISTRADOR;
+	}
+	public static char getCandidato() {
+		return CANDIDATO;
+	}
+	public static char getEmpresa() {
+		return EMPRESA;
+	}
 }

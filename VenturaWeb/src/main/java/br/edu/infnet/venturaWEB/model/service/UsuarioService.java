@@ -1,7 +1,26 @@
 package br.edu.infnet.venturaWEB.model.service;
 
-import java.util.List;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import br.edu.infnet.venturaWEB.model.domain.Usuario;
+
+@FeignClient(url="http://localhost:8081/", name = "usuario")
+public interface UsuarioService {
+
+  @PostMapping(value = "/logar", name = "logar")
+  Usuario validar(@RequestBody Usuario usuario);
+  
+  @PostMapping(value = "/criar", name = "criar")
+  Usuario criarConta(@RequestBody Usuario usuario);
+}
+
+
+/**
+ 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
@@ -11,8 +30,7 @@ import org.springframework.stereotype.Service;
 
 import br.edu.infnet.venturaWEB.model.domain.Usuario;
 import br.edu.infnet.venturaWEB.model.repository.UsuarioRepository;
-
-
+ 
 @Service
 public class UsuarioService {
 	
@@ -24,15 +42,17 @@ public class UsuarioService {
 				.target(REST_URI)
 				.path("email")
 				.path(email)
-				.request(MediaType.APPLICATION_JSON)
+				.request()
 				.get(Usuario.class);
 		}
 
 	public Usuario criarConta(Usuario usuario) {
 		
-		return client.target(REST_URI)
-				.request(MediaType.APPLICATION_JSON)
+		return client.
+				target(REST_URI)
+				.request()
 				.post(Entity.entity(usuario, MediaType.APPLICATION_JSON), Usuario.class);
 	}
-
+}
+**/
 

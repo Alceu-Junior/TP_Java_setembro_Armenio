@@ -10,7 +10,13 @@
 <body>
 
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
-	
+
+	<c:if test="${not empty message}">
+		<div class="alert alert-success">
+			<strong>Atenção!</strong> ${message}
+		</div>
+	</c:if>
+
 	<div class="container">
 	  <h3>VenturaHR</h3>
 	  <h4>TP3 - Java com Armênio Torres</h4>

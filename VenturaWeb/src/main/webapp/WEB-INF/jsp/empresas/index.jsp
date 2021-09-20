@@ -10,13 +10,47 @@
 <body>
 
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
-	
+
+	<H1>Seja bem vindo ${usuario.getNome()}</H1>
 	<div class="container">
-	  <h3>VenturaHR</h3>
-	  <h4>TP3 - Java com Armênio Torres</h4>
-	  
-	  <h1><p> <a href="https://https://github.com/Alceu-Junior">GITHUB de Alceu</a> </p></h1>
+
+		<c:if test="${not empty vagas}">
+		<h4>Quantidade de vagas cadastradas por você: ${vagas.size()}!!!</h4>
+
+	<hr>
+
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Cargo</th>
+			<th>Cidade</th>
+			<th>Forma de Contrato</th>
+			<th>Quantidade de critérios cadastrados</th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<c:forEach var="v" items="${vagas}">
+			<tr>
+				<td>${v.id}</td>
+				<td>${v.cargo}</td>
+				<td>${v.cidade}</td>
+				<td>${v.formaContratacao}</td>
+				<td>${v.criterios.size()}</td>
+				<td><a href="/vaga/${v.id}/excluir">Excluir</a></td>
+			</tr>
+		</c:forEach>
+		</tbody>
+	</table>
+	</c:if>
+
+	<c:if test="${empty vagas}">
+		<h4>Não existem vagas cadastrados!!!</h4>
+	</c:if>
 	</div>
+
+
 
 </body>
 </html>

@@ -1,0 +1,6 @@
+br\edu\infnet\venturaWEB\WEBApplication.class
+br\edu\infnet\venturaWEB\model\domain\Usuario.class
+br\edu\infnet\venturaWEB\controller\LoginController.class
+br\edu\infnet\venturaWEB\model\domain\Vaga.class
+br\edu\infnet\venturaWEB\model\domain\Criterio.class
+br\edu\infnet\venturaWEB\model\service\UsuarioService.class

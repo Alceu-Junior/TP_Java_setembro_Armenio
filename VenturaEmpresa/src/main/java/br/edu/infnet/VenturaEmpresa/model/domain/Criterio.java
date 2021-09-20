@@ -15,8 +15,8 @@ public class Criterio{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@JoinColumn(name = "id_vaga", referencedColumnName = "id", nullable = false)
-    @ManyToOne(optional = false)
+	@JoinColumn(name = "id_vaga", referencedColumnName = "id")
+    @ManyToOne
     @JsonIgnore
 	private Vaga vaga;
 	private String descricao;

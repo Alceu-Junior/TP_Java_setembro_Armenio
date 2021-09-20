@@ -16,7 +16,6 @@ import br.edu.infnet.VenturaEmpresa.model.repository.VagaRepository;
 
 
 @RestController
-@RequestMapping(path = {"/vaga"})
 public class VagaController {
 	
 	@Autowired
@@ -70,14 +69,29 @@ public class VagaController {
 		return retorno;
 	}
 	
+	@GetMapping(value = "/lista/usuario/{id}")
+	public ResponseEntity listarPorIdUsuario(@PathVariable Integer id) {
+		ResponseEntity retorno = ResponseEntity.badRequest().build();
+		List<Vaga> vagas;
+		try {
+			vagas = (List<Vaga>) vagaRepository.findByIdUsuario(id);
+		}catch (Exception e) {
+			return retorno;
+		}
+		
+		retorno = ResponseEntity.ok().body(vagas);
+		
+		return retorno;
+	}
+	
 	@GetMapping(value = "/excluir/{id}")
 	public ResponseEntity excluir(@PathVariable Integer id) {
-		
 		ResponseEntity retorno = ResponseEntity.badRequest().build();
-		if(vagaRepository.findById(id) != null) {
+		
+		if(vagaRepository.findById(id) != null) {	
 			retorno = ResponseEntity.ok().body(vagaRepository.findById(id));
 			vagaRepository.deleteById(id);
-
+			return retorno;
 		}
 		return retorno;
 	}

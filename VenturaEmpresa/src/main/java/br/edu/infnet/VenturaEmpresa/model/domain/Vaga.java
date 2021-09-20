@@ -2,11 +2,14 @@ package br.edu.infnet.VenturaEmpresa.model.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Vaga{
@@ -18,7 +21,8 @@ public class Vaga{
 	private String cargo;
 	private String cidade;
 	private String formaContratacao;
-	@OneToMany
+	@OneToMany(cascade=CascadeType.PERSIST)
+	@JsonIgnore
 	private List<Criterio> criterios;
 	
 

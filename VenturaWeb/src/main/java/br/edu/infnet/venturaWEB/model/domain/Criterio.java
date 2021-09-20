@@ -1,23 +1,8 @@
 package br.edu.infnet.venturaWEB.model.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-@Entity
 public class Criterio{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@JoinColumn(name = "id_vaga", referencedColumnName = "id", nullable = false)
-    @ManyToOne(optional = false)
-    @JsonIgnore
 	private Vaga vaga;
 	private String descricao;
 	private int perfil;

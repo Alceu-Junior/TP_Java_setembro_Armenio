@@ -9,6 +9,8 @@
 </head>
 <body>
 
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+
 	<div class="container">
 	
 		<c:if test="${not empty mensagem}">
