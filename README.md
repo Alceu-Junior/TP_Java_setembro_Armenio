@@ -6,6 +6,7 @@
 ![Badge](https://img.shields.io/badge/MySql-%23007ACC?style=for-the-badge&logo=mysql&logoColor=white)
 ![Badge](https://img.shields.io/badge/Hibernate-%23092E20?style=for-the-badge&logo=hibernate&logoColor=white)
 ![Badge](https://img.shields.io/badge/InteliJ_IDE-%2339457E?style=for-the-badge&logo=intellijidea&logoColor=white)
+![Badge](https://img.shields.io/badge/HTML-JSP_TagLib-%23000000.svg?style=for-the-badge&logo=html5&logoColor=white&color=AAAAA4&labelColor=gray)
 
 
 
