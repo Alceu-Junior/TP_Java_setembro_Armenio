@@ -4,6 +4,7 @@
 ![Badge](https://img.shields.io/badge/Java-%237159c1?style=for-the-badge&logo=java&logoColor=white)
 ![Badge](https://img.shields.io/badge/SpringBoot-%211159c1?style=for-the-badge&logo=springboot&logoColor=white)
 ![Badge](https://img.shields.io/badge/MySql-%23007ACC?style=for-the-badge&logo=mysql&logoColor=white)
+![Badge](https://img.shields.io/badge/Hibernate-%23092E20?style=for-the-badge&logo=hibernate&logoColor=white)
 ![Badge](https://img.shields.io/badge/InteliJ_IDE-%2339457E?style=for-the-badge&logo=intellijidea&logoColor=white)
 
 
@@ -11,7 +12,7 @@
 # VenturaHR
 
 VenturaHR is a platform for both companies and job seekers to make their match. 
-Each vacancy has its criteria, that the seeker should answer for.
+Each vacancy has its criteria, so the seeker should answer for.
 
 ## Installation
 
