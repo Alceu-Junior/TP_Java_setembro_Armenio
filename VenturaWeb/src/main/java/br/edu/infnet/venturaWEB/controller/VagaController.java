@@ -40,7 +40,7 @@ public class VagaController {
 		} catch (Exception e) {
 			model.addAttribute("message", "Erro ao cadastrar a vaga!");
 		}
-		return "redirect:/vaga/lista";
+		return listarVagas(model, user);
 
 	}
 
@@ -70,7 +70,7 @@ public class VagaController {
 		} catch (Exception e) {
 			model.addAttribute("message", "Erro ao excluir vaga!");
 		}
-			return "redirect:/vaga/lista";
+			return listarVagas(model, usuario);
 	}
 
 }

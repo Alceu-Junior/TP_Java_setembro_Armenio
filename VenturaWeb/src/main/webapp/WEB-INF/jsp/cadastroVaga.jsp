@@ -22,7 +22,7 @@
 
 			<div class="form-group">
 			  <label>Cidade:</label>
-			  <input type="text" class="form-control" value="poços de caldas" name="cidade">
+			  <input type="text" class="form-control" value="pocos de caldas" name="cidade">
 			</div>
 
 			<div class="form-group">
@@ -30,8 +30,8 @@
 			  <input type="text" class="form-control" value="CLT" name="formaContratacao">
 			</div>
 
-		  <c:forEach begin="1" end="${quantidadeDeCriterios}">
-				<h3>Criterio</h3>
+		  <c:forEach var="i" begin="1" end="${quantidadeDeCriterios}">
+				<h3>Criterio ${i}</h3>
 			  <div class="form-group">
 				  <label>Descrição:</label>
 				  <input type="text" class="form-control" value="Um job" name="descricao">

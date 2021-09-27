@@ -15,7 +15,7 @@
     <ul class="nav navbar-nav navbar-right">
       <c:if test="${empty user}">
 	      <li><a href="/usuario/pagina/cadastro"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
       <c:if test="${not empty user}">
       	  <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout, ${user.nome}!!!</a></li>

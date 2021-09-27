@@ -10,6 +10,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpSession;
 
+import static java.util.Objects.isNull;
 
 
 @SessionAttributes("user")
@@ -20,7 +21,7 @@ public class LoginController {
     private UsuarioService usuarioService;
     
     @GetMapping(value = "/")
-	public String telaLogin() {
+	public String telaLogin(Model model) {
 		return "login";
 	}
 
@@ -35,9 +36,9 @@ public class LoginController {
 	}
 
 	@GetMapping(value = "/home")
-	public String telaHome(@SessionAttribute("user") Usuario user, Model model) {
+	public String telaHome(@SessionAttribute(name="user", required=false) Usuario user, Model model) {
 		System.out.println("/HOME DEBUG");
-		if (user.equals(null)) {
+		if (isNull(user)) {
 			return "/login";
 		}
 		return "home";
@@ -53,7 +54,7 @@ public class LoginController {
 			model.addAttribute("message", "Erro ao criar usuário!");
 		}
 
-		return "/home";
+		return telaHome(usuario, model);
 	}
     
     @PostMapping(value = "/login")
@@ -69,11 +70,11 @@ public class LoginController {
 			model.addAttribute("user", usuarioValidado);
 			String pagina = null;
 
-			return "/home";
+			return telaHome(usuario, model);
 		} else {
 			model.addAttribute("message", "Autenticação inválida para o usuário " + email + "!!!");
 
-			return "/login";
+			return telaLogin(model);
 		}
 	}
 

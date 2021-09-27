@@ -20,29 +20,29 @@
 			</div>
 		</c:if>
 		
-		<c:if test="${not empty lista}">
-	
-			<h4>Quantidade de usuários existentes: ${lista.size()}!!!</h4>
-			
+		<c:if test="${not empty criterios}">
+
 			<hr>
 	
 			<table class="table table-striped">
 		    <thead>
 		      <tr>
 		      	<th>Id</th>
-		        <th>Nome</th>
-		        <th>E-mail</th>
+		        <th>Descricao</th>
+		        <th>Perfil</th>
+		        <th>Peso</th>
 		        <c:if test="${user.admin}">
 		        	<th></th>
 		        </c:if>
 		      </tr>
 		    </thead>
 		    <tbody>		    
-		    	<c:forEach var="u" items="${lista}">
+		    	<c:forEach var="c" items="${criterios}">
 			      <tr>
-			        <td>${u.id}</td>
-			        <td>${u.nome}</td>
-			        <td>${u.email}</td>
+			        <td>${c.id}</td>
+			        <td>${u.descricao}</td>
+			        <td>${u.perfil}</td>
+			        <td>${u.peso}</td>
 			        <c:if test="${user.admin}">
 			        	<td><a href="/usuario/${u.id}/excluir">Excluir</a></td>
 			      	</c:if>
@@ -52,7 +52,7 @@
 		  	</table>
 	  	</c:if>
 	  	
-	  	<c:if test="${empty lista}">
+	  	<c:if test="${empty criterios}">
 			<h4>Não existem usuários cadastrados!!!</h4>	  	
 	  	</c:if>
 	</div>
